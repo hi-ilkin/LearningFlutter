@@ -16,20 +16,40 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        // getting image from network
-        // child: Image(
-        //   image: NetworkImage('https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'),
+        // Adding icon
+        // child: Icon(
+        //   Icons.airport_shuttle,
+        //   color: Colors.lightBlue,
+        //   size: 50,
         // ),
 
-        // getting image from assets folder
-        // child: Image(
-        //   image: AssetImage('assets/cat-1.jpg'),
-        // ),
+        // Simple button
+        // child: ElevatedButton(
+        //   onPressed: () {
+        //     print('Button clicked');
+        //   },
+        //   child: Text('CLick Me'),
+        // )
 
-        // Shortcut
-        child: Image.asset('assets/parrot-1.jpg'),
+        // ElevatedButton with icon and style
+        // child: ElevatedButton.icon(
+        //   onPressed: () {},
+        //   label: Text('text me'),
+        //   icon: Icon(
+        //     Icons.chat,
+        //   ),
+        //   style: ElevatedButton.styleFrom(
+        //     primary: Colors.amber,
+        //   ),
+        // )
 
+        child: IconButton(
+          onPressed: () {print('You clicked an icon button');},
+          icon: Icon(Icons.alternate_email),
+          color: Colors.amber
+        )
       ),
+
       floatingActionButton: FloatingActionButton(
         child: Text('click'),
         backgroundColor: Colors.red,
