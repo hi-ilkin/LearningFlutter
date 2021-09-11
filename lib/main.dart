@@ -15,40 +15,19 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.red[600],
         centerTitle: true,
       ),
-      body: Center(
-        // Adding icon
-        // child: Icon(
-        //   Icons.airport_shuttle,
-        //   color: Colors.lightBlue,
-        //   size: 50,
+
+      // Container example
+      // body: Container(
+      //   padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0),
+      //   margin: EdgeInsets.fromLTRB(10.0, 20.0, 30.0, 40.0),
+      //   color: Colors.grey[400],
+      //   child: Text('hello'),
         // ),
+        body: Padding(
+          padding: EdgeInsets.all(50.0),
+          child: Text('hello'),
+        ),
 
-        // Simple button
-        // child: ElevatedButton(
-        //   onPressed: () {
-        //     print('Button clicked');
-        //   },
-        //   child: Text('CLick Me'),
-        // )
-
-        // ElevatedButton with icon and style
-        // child: ElevatedButton.icon(
-        //   onPressed: () {},
-        //   label: Text('text me'),
-        //   icon: Icon(
-        //     Icons.chat,
-        //   ),
-        //   style: ElevatedButton.styleFrom(
-        //     primary: Colors.amber,
-        //   ),
-        // )
-
-        child: IconButton(
-          onPressed: () {print('You clicked an icon button');},
-          icon: Icon(Icons.alternate_email),
-          color: Colors.amber
-        )
-      ),
 
       floatingActionButton: FloatingActionButton(
         child: Text('click'),
