@@ -16,41 +16,38 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
 
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-
-        children: [
-          Row (
-            children: [
-              Column(
-                children: [
-                  Container(
-                    color: Colors.green,
-                    padding: EdgeInsets.all(10),
-                    child: Text("Column in Row in Column")
-                  )
-                ],
-              )
-            ],
+      body: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Image.asset('assets/parrot-1.jpg')
           ),
-
-          Text('Hello'),
-          TextButton(
-            onPressed: () {},
-            child: Text('Click me'),
-            style: TextButton.styleFrom(
-                primary: Colors.amber[300],
-                backgroundColor: Colors.red
+          Expanded(
+            flex: 4,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.cyan,
+              child: Text('1')
             ),
           ),
-          Container(
-            color: Colors.cyan,
-            padding: EdgeInsets.all(20),
-            child: Text('a container')
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.pink,
+              child: Text('2'),
+            ),
           ),
-
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(30.0),
+              color: Colors.yellow,
+              child: Text('3')
+            ),
+          )
         ],
+
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('click'),
