@@ -16,15 +16,19 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       body: Center(
-        child: Text(
-          "Hello ninjas!",
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.grey[600],
-          ),
-        ),
+        // getting image from network
+        // child: Image(
+        //   image: NetworkImage('https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80'),
+        // ),
+
+        // getting image from assets folder
+        // child: Image(
+        //   image: AssetImage('assets/cat-1.jpg'),
+        // ),
+
+        // Shortcut
+        child: Image.asset('assets/parrot-1.jpg'),
+
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('click'),
