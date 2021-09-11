@@ -16,11 +16,25 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
 
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
 
         children: [
+          Row (
+            children: [
+              Column(
+                children: [
+                  Container(
+                    color: Colors.green,
+                    padding: EdgeInsets.all(10),
+                    child: Text("Column in Row in Column")
+                  )
+                ],
+              )
+            ],
+          ),
+
           Text('Hello'),
           TextButton(
             onPressed: () {},
