@@ -1,10 +1,9 @@
-# demo2
+# Learning Flutter
 
-A new Flutter project.
+Learning Flutter by following [this tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ). Each commit will
+be a single lecture.
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
