@@ -4,8 +4,16 @@ void main() => runApp(MaterialApp(
       home: Home(),
     ));
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+
+  int count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +35,7 @@ class Home extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(30.0),
               color: Colors.cyan,
-              child: Text('1')
+              child: Text('$count')
             ),
           ),
           Expanded(
@@ -40,19 +48,32 @@ class Home extends StatelessWidget {
           ),
           Expanded(
             flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.yellow,
-              child: Text('3')
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  count -= 1;
+                });
+              },
+                child: Container(
+                  padding: EdgeInsets.all(30.0),
+                  color: Colors.yellow,
+                  child: Text('-'),
             ),
+            )
+
+
           )
         ],
 
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text('click'),
+        child: Text('add'),
         backgroundColor: Colors.red,
-        onPressed: () => {},
+        onPressed: () => {
+          setState(() {
+            count += 1;
+          })
+        },
       ),
     );
   }
