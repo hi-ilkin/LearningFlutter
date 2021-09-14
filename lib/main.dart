@@ -1,80 +1,28 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-      home: Home(),
-    ));
+void main() => runApp(MaterialApp(home: QuoteList()));
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+class QuoteList extends StatefulWidget {
+  const QuoteList({Key? key}) : super(key: key);
 
   @override
-  _HomeState createState() => _HomeState();
+  _QuoteListState createState() => _QuoteListState();
 }
 
-class _HomeState extends State<Home> {
-
-  int count = 0;
+class _QuoteListState extends State<QuoteList> {
+  List<String> quotes = ['Quote 1', 'Quote 2', 'Quote 3'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('my first app'),
-        backgroundColor: Colors.red[600],
-        centerTitle: true,
-      ),
-
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Image.asset('assets/parrot-1.jpg')
-          ),
-          Expanded(
-            flex: 4,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.cyan,
-              child: Text('$count')
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(30),
-              color: Colors.pink,
-              child: Text('2'),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: TextButton(
-              onPressed: () {
-                setState(() {
-                  count -= 1;
-                });
-              },
-                child: Container(
-                  padding: EdgeInsets.all(30.0),
-                  color: Colors.yellow,
-                  child: Text('-'),
-            ),
-            )
-
-
-          )
-        ],
-
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Text('add'),
-        backgroundColor: Colors.red,
-        onPressed: () => {
-          setState(() {
-            count += 1;
-          })
-        },
-      ),
-    );
+        backgroundColor: Colors.grey[200],
+        appBar: AppBar(
+          title: Text('Some quotes'),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+        ),
+        body: Column(
+          children: quotes.map((quote) => Text(quote)).toList(),
+        ));
   }
 }
