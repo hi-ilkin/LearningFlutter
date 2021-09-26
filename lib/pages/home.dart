@@ -18,6 +18,9 @@ class _HomeState extends State<Home> {
                 },
                 icon: Icon(Icons.edit_location),
                 label: Text('Change location'),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.grey[300],
+                ),
               )
             ],
           )
