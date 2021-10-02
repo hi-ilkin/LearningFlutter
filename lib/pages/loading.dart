@@ -1,5 +1,6 @@
 import 'package:demo2/services/world_time.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -35,12 +36,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(0, 250, 0, 0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text(time)],
-          ),
-    ));
+      body: SpinKitFadingCube(size: 50, color: Colors.blue[600]),
+    );
   }
 }
