@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:intl/intl.dart';
 
 class WorldTime {
   String location;
@@ -15,6 +16,7 @@ class WorldTime {
         Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
     Map data = jsonDecode(response.body);
 
-    this.time = data['datetime'].toString();
+    print(DateTime.parse(data['datetime']).runtimeType);
+    this.time = DateFormat.Hms().format(DateTime.parse(data['datetime']));
   }
 }

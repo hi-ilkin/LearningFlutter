@@ -35,8 +35,12 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-           child: Text(time),
+        body: Padding(
+          padding: EdgeInsets.fromLTRB(0, 250, 0, 0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Text(time)],
+          ),
     ));
   }
 }
