@@ -10,23 +10,47 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-  void getUserId() async {
-    Response response =
-        await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
-    Map mapData = jsonDecode(response.body);
-    print(mapData);
-    print(mapData['userId']);
+  void getTime(String city) async {
+    Response response = await get(
+        Uri.parse("http://worldtimeapi.org/api/timezone/Europe/$city"));
+    Map data = jsonDecode(response.body);
+
+    data.forEach((key, value) {
+      print('$key : $value');
+    });
+
+    DateTime now = DateTime.parse(data['datetime']);
+    print('Current time in $city : $now');
   }
 
   @override
   initState() {
     super.initState();
-    getUserId();
-    print('Because previous code is async, we run this before the function');
+    getTime('London');
   }
+    String dropdownValue = 'Istanbul';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+
+    return Scaffold(
+      body: SafeArea(
+          child: DropdownButton(
+        value: dropdownValue,
+        onChanged: (String? newValue) {
+          setState(() {
+            dropdownValue = newValue!;
+            getTime(dropdownValue);
+          });
+        },
+        items: <String>['Istanbul', 'Stockholm', 'London', 'Riga']
+            .map<DropdownMenuItem<String>>((String value) {
+          return DropdownMenuItem<String>(
+            value: value,
+            child: Text(value),
+          );
+        }).toList(),
+      )),
+    );
   }
 }
