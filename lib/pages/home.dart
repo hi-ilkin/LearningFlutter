@@ -6,8 +6,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  Map data = {};
+
+
   @override
   Widget build(BuildContext context) {
+
+    data = ModalRoute.of(context)!.settings.arguments as Map;
+    String time = data['time'];
+    String location = data['location'];
     return Scaffold(
         body: SafeArea(
           child: Column(
@@ -21,7 +29,9 @@ class _HomeState extends State<Home> {
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.grey[300],
                 ),
-              )
+              ),
+
+              Text('Time in $location : $time '),
             ],
           )
         )

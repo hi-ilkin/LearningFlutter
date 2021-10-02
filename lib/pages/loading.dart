@@ -24,6 +24,12 @@ class _LoadingState extends State<Loading> {
     setState(() {
       time = stockholmTime.time;
     });
+
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': stockholmTime.location,
+      'flag': stockholmTime.flag,
+      'time': stockholmTime.time
+    });
   }
 
   @override
