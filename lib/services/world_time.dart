@@ -8,6 +8,7 @@ class WorldTime {
   String time = '';
   String flag;
   String url;
+  bool isDayTime = false;
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -16,7 +17,9 @@ class WorldTime {
         Uri.parse("http://worldtimeapi.org/api/timezone/$url"));
     Map data = jsonDecode(response.body);
 
-    print(DateTime.parse(data['datetime']).runtimeType);
-    this.time = DateFormat.Hms().format(DateTime.parse(data['datetime']));
+    DateTime now = DateTime.parse(data['datetime'].substring(0, 26));
+    print('Data : $data');
+    this.time = DateFormat.Hms().format(now);
+    this.isDayTime = now.hour > 7 && now.hour < 20;
   }
 }

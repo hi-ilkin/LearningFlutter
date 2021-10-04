@@ -19,17 +19,18 @@ class _LoadingState extends State<Loading> {
   String time = 'loading';
 
   void initializeTime() async {
-    WorldTime stockholmTime =
-        new WorldTime(location: 'Stockholm', flag: '', url: 'Europe/Stockholm');
-    await stockholmTime.getTime();
+    WorldTime timeInstance =
+        new WorldTime(location: 'Barbados', flag: '', url: 'America/Barbados');
+    await timeInstance.getTime();
     setState(() {
-      time = stockholmTime.time;
+      time = timeInstance.time;
     });
 
     Navigator.pushReplacementNamed(context, '/home', arguments: {
-      'location': stockholmTime.location,
-      'flag': stockholmTime.flag,
-      'time': stockholmTime.time
+      'location': timeInstance.location,
+      'flag': timeInstance.flag,
+      'time': timeInstance.time,
+      'isDayTime': timeInstance.isDayTime
     });
   }
 
